@@ -2,18 +2,18 @@
 
 int R = 0, C = 0;
 
-void dfs(int matriks[R][C], int visited[R][C], int x, int y, int *large) {
-    if (x < 0 || y < 0 || x >= R || y >= C || visited[x][y] == 1 || matriks[x][y] == 0) {
+void dfs(int matriks[R][C], int visited[R][C], int row, int col, int *large) {
+    if (row < 0 || col < 0 || row >= R || col >= C || visited[row][col] == 1 || matriks[row][col] == 0) {
         return;
     }
 
-    visited[x][y] = 1;
+    visited[row][col] = 1;
     *large = *large + 1;
     
-    dfs(matriks, visited, x + 1, y, large);
-    dfs(matriks, visited, x - 1, y, large);
-    dfs(matriks, visited, x, y + 1, large);
-    dfs(matriks, visited, x, y - 1, large);
+    dfs(matriks, visited, row + 1, col, large);
+    dfs(matriks, visited, row - 1, col, large);
+    dfs(matriks, visited, row, col + 1, large);
+    dfs(matriks, visited, row, col - 1, large);
 }
 
 int main() {
