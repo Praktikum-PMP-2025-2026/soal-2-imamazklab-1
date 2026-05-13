@@ -31,38 +31,38 @@ int main() {
     int large[R][C];
     int visited[R][C];
 
-    // for (int i = 0; i < R; i++) {
-    //     for (int j = 0; j < C; j++) {
-    //         large[i][j] = 0;
-    //         // for (int k = 0; k < R; k++) {
-    //         //     for (int 0 = j; l < C; l++) {
-    //         //         if (visited[k][l] != 1) {
-    //         //             visited[k][l] = 1;
-    //         //             if (matriks[k][l] == 1) {
-    //         //                 large[i][j]++;
-    //         //             } else break;
-    //         //         }
-    //         //     }
-    //         // }
-    //         dfs(matriks, visited, i, j, &large[i][j]);
-    //     }
-    // }
-
     for (int i = 0; i < R; i++) {
         for (int j = 0; j < C; j++) {
             large[i][j] = 0;
-            for (int k = 0; k < R; k++) {
-                for (int l = 0; l < C; l++) {
-                    if (visited[k][l] != 1) {
-                        visited[k][l] = 1;
-                        if (matriks[k][l] == 1) {
-                            large[i][j]++;
-                        } else break;
-                    }
-                }
-            }
+            // for (int k = 0; k < R; k++) {
+            //     for (int 0 = j; l < C; l++) {
+            //         if (visited[k][l] != 1) {
+            //             visited[k][l] = 1;
+            //             if (matriks[k][l] == 1) {
+            //                 large[i][j]++;
+            //             } else break;
+            //         }
+            //     }
+            // }
+            dfs(matriks, visited, i, j, &large[i][j]);
         }
     }
+
+    // for (int i = 0; i < R; i++) {
+    //     for (int j = 0; j < C; j++) {
+    //         large[i][j] = 0;
+    //         for (int k = i; k < R; k++) {
+    //             for (int l = j; l < C; l++) {
+    //                 if (visited[k][l] != 1) {
+    //                     visited[k][l] = 1;
+    //                     if (matriks[k][l] == 1) {
+    //                         large[i][j]++;
+    //                     } else break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     int total = 0;
     int resLarge = 0;
