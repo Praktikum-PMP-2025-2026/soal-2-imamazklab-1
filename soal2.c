@@ -1,7 +1,17 @@
+/** EL2008 Praktikum Pemecahan Masalah dengan Pemrograman 2025/2026
+ *   Modul               : 05 – Foundation of Algorithm
+ *   Hari dan Tanggal    : Rabu, 13 Mei 2026
+ *   Nama (NIM)          : Imam Azkaziyan Ahmad (13224058)
+ *   Nama File           : soal1.c
+ *   Deskripsi           : Program untuk mencari pulau dan pulau terbesar
+ * 
+ */
+
 #include <stdio.h>
 
 int R = 0, C = 0;
 
+// fungsi dfs
 void dfs(int matriks[R][C], int visited[R][C], int row, int col, int *large) {
     if (row < 0 || col < 0 || row >= R || col >= C || visited[row][col] == 1 || matriks[row][col] == 0) {
         return;
